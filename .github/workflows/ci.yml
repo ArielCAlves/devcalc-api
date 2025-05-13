@@ -4,11 +4,11 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'TP1/devcalc/src/**'
+      - 'TP1/devcalc/**'
   pull_request:
     branches: [ main ]
     paths:
-      - 'TP1/devcalc/src/**'
+      - 'TP1/devcalc/**'
 
 jobs:
   checkout:
@@ -29,6 +29,7 @@ jobs:
           java-version: '17'
       - name: Build com Maven
         run: mvn clean install -DskipTests
+        working-directory: TP1/devcalc
 
   test:
     runs-on: ubuntu-latest
@@ -42,3 +43,4 @@ jobs:
           java-version: '17'
       - name: Executar testes
         run: mvn test
+        working-directory: TP1/devcalc
