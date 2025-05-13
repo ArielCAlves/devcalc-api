@@ -1,13 +1,14 @@
-name: CI Pipeline - Sem Funcionar
+name: CI Pipeline
 
 on:
   push:
     branches: [ main ]
     paths:
-      - 'src/**'
+      - 'TP1/devcalc/src/**'
   pull_request:
+    branches: [ main ]
     paths:
-      - 'src/**'
+      - 'TP1/devcalc/src/**'
 
 jobs:
   checkout:
