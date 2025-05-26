@@ -19,3 +19,15 @@ Aplicacao em Java utilizada na faculdade que realiza operações matemáticas b�
 ```bash
 git clone https://github.com/seu-usuario/devcalc-api.git
 cd devcalc-api
+```
+
+
+### Diagnóstico e Correção de Erro no Pipeline
+
+Durante a atividade 5 do TP2 inseri um erro proposital para simular uma falha no pipeline.
+
+A falha foi identificada por meio da aba **Actions** dentro deste repositório do GitHub, onde é possível acompanhar os logs.  
+Foi possível identificar qual step ocasionou o erro exibindo a mensagem de falha. 
+Reverti o erro para voltar a funcionar corretamente.
+
+
