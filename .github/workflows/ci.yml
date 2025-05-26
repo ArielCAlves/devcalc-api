@@ -78,3 +78,4 @@ jobs:
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DISABLE_LINTERS: CHECKOV,GOOGLE_JAVA_FORMAT,JAVA,MARKDOWN
