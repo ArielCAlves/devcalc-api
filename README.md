@@ -14,6 +14,9 @@ Aplicacao em Java utilizada na faculdade que realiza operações matemáticas b�
 - Maven
 - Java 17
 
+### Badges
+![CI Pipeline](https://github.com/ArielCAlves/devcalc-api/actions/workflows/ci.yml/badge.svg)
+
 ### Como clonar e executar
 
 ```bash
