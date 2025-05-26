@@ -2,6 +2,17 @@ name: CI Pipeline - TP 2 - Refatorado
 
 on:
   workflow_dispatch:
+    inputs:
+      run_tests:
+        description: 'Caso queira teste'
+        required: true
+        type: boolean
+        default: true
+      run_lint:
+        description: 'Caso queira lint'
+        required: true
+        type: boolean
+        default: true
   push:
     branches: [ main ]
     paths:
@@ -35,6 +46,9 @@ jobs:
   reuse-lint-and-test:
     uses: ./.github/workflows/lint-and-test.yml
     needs: build
+    with:
+      run_tests: ${{ inputs.run_tests }}
+      run_lint: ${{ inputs.run_lint }}
 
   package:
     runs-on: ubuntu-22.04
