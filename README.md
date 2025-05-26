@@ -34,3 +34,9 @@ Foi possível identificar qual step ocasionou o erro exibindo a mensagem de falh
 Reverti o erro para voltar a funcionar corretamente.
 
 
+### Execução Manual vs Automática
+O pipeline foi executado automaticamente após o push e também manualmente no momento que cliquei em "Run workflow" dentro do pipeline que está na aba **Actions**.  
+Para execução automática tem o trigger `push` e para manual tem `workflow_dispatch`, sendo que esta é possível escolher os parâmetros `run_tests` e `run_lint`  enquanto aquela garante integração contínua com cada alteração que é feita no projeto.
+
+
+
