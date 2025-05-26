@@ -1,0 +1,33 @@
+name: Lint & Test
+
+on:
+  workflow_call:
+jobs:
+  lint:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Roda o lint
+        uses: github/super-linter@v6
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_JAVA: false
+          VALIDATE_GOOGLE_JAVA_FORMAT: false
+          VALIDATE_MARKDOWN: false
+          VALIDATE_CHECKOV: false
+
+  test:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Instala o java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - name: Executa os testes
+        run: mvn test
+        working-directory: TP1/devcalc
