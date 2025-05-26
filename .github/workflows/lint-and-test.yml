@@ -2,8 +2,19 @@ name: Lint & Test
 
 on:
   workflow_call:
+    inputs:
+      run_tests:
+        required: false
+        type: boolean
+        default: true
+      run_lint:
+        required: false
+        type: boolean
+        default: true
+
 jobs:
   lint:
+    if: ${{ inputs.run_lint }}
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout do código
@@ -20,6 +31,7 @@ jobs:
           VALIDATE_CHECKOV: false
 
   test:
+    if: ${{ inputs.run_tests }}
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v3
