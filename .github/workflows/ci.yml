@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: CI Pipeline - TP 2
 
 on:
   workflow_dispatch:
@@ -66,3 +66,15 @@ jobs:
     steps:
       - name: Simular deploy
         run: echo "Deploy realizado com sucesso"
+
+  lint:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Roda o Linter
+        uses: github/super-linter@v6
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
