@@ -69,4 +69,4 @@ jobs:
     needs: [build, reuse-lint-and-test, package]
     steps:
       - name: Faz o deploy
-        run: echo "Deploy realizado com sucesso"
+        run: comando_para_quebrar_de_proposito_por_causa_da_etapa_5_do_TP2
