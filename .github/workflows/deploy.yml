@@ -1,0 +1,26 @@
+name: Deploy Automatizado
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+
+jobs:
+  deploy-dev:
+    if: github.ref == 'refs/heads/dev'
+    runs-on: ubuntu-latest
+    environment: dev
+    steps:
+      - name: Deploy no ambiente dev
+        run: 'echo "Deploy em dev: ${{ vars.APP_ENV }}"'
+
+  deploy-prod:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment:
+      name: prod
+    steps:
+      - name: Deploy no ambiente prod (precisa de aprovacao)
+        run: 'echo "Deploy em prod: ${{ secrets.PROD_SECRET }}"'
+
