@@ -1,0 +1,17 @@
+name: Uso das Variáveis Públicas e Secretas
+
+on: [workflow_dispatch]
+
+jobs:
+  demo-vars-secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mostrando as variáveis públicas
+        run: |
+          echo "Modo de execução: ${{ vars.APP_MODE }}"
+          echo "Suporte: ${{ vars.SUPPORT_EMAIL }}"
+
+      - name: Simulando o uso da variável sensível PROD_TOKEN
+        run: |
+          echo "Autenticando com token..."
+          echo "Token usado: ${{ secrets.PROD_TOKEN }}"
