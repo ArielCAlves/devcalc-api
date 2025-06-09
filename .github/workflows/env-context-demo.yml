@@ -1,0 +1,31 @@
+name: Contextos e Variáveis de Ambiente
+
+on: [workflow_dispatch]
+
+env:
+  STAGE: workflow
+
+jobs:
+  contexto-demo:
+    runs-on: ubuntu-latest
+    env:
+      STAGE: job
+
+    steps:
+      - name: Exibindo os valores das variáveis de acordo com o contexto
+        env:
+          STAGE: step
+        run: |
+          echo "Usuário que acionou: ${{ github.actor }}"
+          echo "SO do runner: ${{ runner.os }}"
+          echo "Valor da variável STAGE: $STAGE"
+
+      - name: Exibindo STAGE no nível do job
+        run: 'echo "STAGE no job: $STAGE"'
+
+  outro-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: STAGE no nível do workflow
+        run: 'echo "STAGE no outro job: $STAGE"'
+
