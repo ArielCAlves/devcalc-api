@@ -1,0 +1,24 @@
+name: Runner Self-Hosted
+
+on: [workflow_dispatch]
+
+jobs:
+  check-runner:
+    runs-on: self-hosted
+    steps:
+      - name: Verficando o SO
+        run: uname -a
+
+      - name: Verificado a versão do Java
+        run: java -version
+
+      - name: Instalando o pacote jq no runner
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq
+
+      - name: Versão do jq
+        run: jq --version
+
+      - name: Confirmando execução
+        run: echo "Este job rodou no self-hosted"

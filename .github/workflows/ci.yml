@@ -1,4 +1,4 @@
-name: CI Pipeline - TP 2 - Refatorado
+name: CI Pipeline - TP 3
 
 on:
   workflow_dispatch:

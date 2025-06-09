@@ -1,0 +1,14 @@
+actions-runner/
+
+.idea/
+TP1/.idea/
+*.iml
+
+target/
+
+.DS_Store
+Thumbs.db
+
+*.log
+
+.env
