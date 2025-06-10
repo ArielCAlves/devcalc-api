@@ -14,7 +14,7 @@ on:
         type: boolean
         default: true
   push:
-    branches: [ main ]
+    branches: [ main, dev ]
     paths:
       - 'TP1/devcalc/**'
   pull_request:
@@ -64,9 +64,20 @@ jobs:
         run: mvn package -DskipTests
         working-directory: TP1/devcalc
 
-  deploy:
+  deploy-dev:
+    if: github.ref == 'refs/heads/dev'
     runs-on: ubuntu-22.04
+    environment: dev
     needs: [build, reuse-lint-and-test, package]
     steps:
-      - name: Faz o deploy
-        run: echo "Deploy realizado com sucesso"
+      - name: Deploy para DEV
+        run: 'echo "Deploy para DEV com var: ${{ vars.APP_MODE }} e ${{ vars.SUPPORT_EMAIL }}"'
+
+  deploy-prod:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-22.04
+    environment: prod
+    needs: [build, reuse-lint-and-test, package]
+    steps:
+      - name: Deploy para PROD
+        run: 'echo "Deploy para PROD com segredo: ${{ secrets.PROD_SECRET }}"'
