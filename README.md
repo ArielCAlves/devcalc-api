@@ -17,6 +17,13 @@ Aplicacao em Java utilizada na faculdade que realiza operações matemáticas b�
 
 ### Badges
 ![CI Pipeline](https://github.com/ArielCAlves/devcalc-api/actions/workflows/ci.yml/badge.svg)
+![Create Issue](https://github.com/ArielCAlves/devcalc-api/actions/workflows/create-issue.yml/badge.svg)
+![Deploy](https://github.com/ArielCAlves/devcalc-api/actions/workflows/deploy.yml/badge.svg)
+![Env Context Demo](https://github.com/ArielCAlves/devcalc-api/actions/workflows/env-context-demo.yml/badge.svg)
+![Hello](https://github.com/ArielCAlves/devcalc-api/actions/workflows/hello.yml/badge.svg)
+![Self Hosted Check](https://github.com/ArielCAlves/devcalc-api/actions/workflows/self-hosted-check.yml/badge.svg)
+![Vars and Secrets](https://github.com/ArielCAlves/devcalc-api/actions/workflows/vars.yml/badge.svg)
+
 
 ### Como clonar e executar
 
