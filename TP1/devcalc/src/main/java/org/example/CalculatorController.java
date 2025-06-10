@@ -44,4 +44,13 @@ public class CalculatorController {
             return "Erro";
         }
     }
+    @GetMapping("/sqrt")
+    public String sqrt(@RequestParam(name = "x") String x) {
+        try {
+            return calculatorService.sqrt(x).stripTrailingZeros().toPlainString();
+        } catch (Exception e) {
+            return "Erro";
+        }
+    }
+
 }

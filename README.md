@@ -1,12 +1,13 @@
 # DevCalc API 
 
-Aplicacao em Java utilizada na faculdade que realiza operações matemáticas básicas: adição, subtração, multiplicação e divisão.
+Aplicacao em Java utilizada na faculdade que realiza operações matemáticas básicas: adição, subtração, multiplicação, divisão e raiz quadrada.
 
 ### Endpoints para testar a API
 - GET /add?a=10&b=5 → retorna 15
 - GET /subtract?a=10&b=5 → retorna 5
 - GET /multiply?a=10&b=5 → retorna 50
 - GET /divide?a=10&b=5 → retorna 2
+- GET /sqrt?x=16 → retorna 4
 
 ### Objetivo: foco em CI/CD usando GitHub Actions
 

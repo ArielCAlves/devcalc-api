@@ -24,4 +24,10 @@ public class CalculatorService {
         }
         return new BigDecimal(a).divide(divisor, 10, RoundingMode.HALF_UP);
     }
+    public BigDecimal sqrt(String x) {
+        BigDecimal number = new BigDecimal(x);
+        double result = Math.sqrt(number.doubleValue());
+        return BigDecimal.valueOf(result);
+    }
+
 }
